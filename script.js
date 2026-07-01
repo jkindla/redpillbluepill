@@ -1,4 +1,6 @@
 const header = document.querySelector("[data-header]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const nav = document.querySelector("[data-nav]");
 const year = document.querySelector("[data-year]");
 const carousel = document.querySelector("[data-carousel]");
 
@@ -12,6 +14,29 @@ const updateHeader = () => {
 
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
+
+if (header && menuToggle && nav) {
+  const setMenuOpen = (isOpen) => {
+    header.classList.toggle("is-menu-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  menuToggle.addEventListener("click", () => {
+    setMenuOpen(!header.classList.contains("is-menu-open"));
+  });
+
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      setMenuOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 701px)").matches) {
+      setMenuOpen(false);
+    }
+  });
+}
 
 if (carousel) {
   const track = carousel.querySelector("[data-carousel-track]");

@@ -14,7 +14,13 @@
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="Red Pill Blue Pill home">Red Pill Blue Pill</a>
-      <nav class="site-nav" aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="site-nav" id="primary-nav" data-nav aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#videos">Videos</a>
         <a href="#contact">Contact</a>
