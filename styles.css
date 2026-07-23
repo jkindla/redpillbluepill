@@ -354,6 +354,20 @@ h3 {
   background: linear-gradient(180deg, rgba(20, 20, 20, 0), rgba(20, 20, 20, 0.28));
 }
 
+.video-link-card.has-thumbnail {
+  background:
+    linear-gradient(180deg, rgba(20, 20, 20, 0.08), rgba(20, 20, 20, 0.58)),
+    var(--video-thumb),
+    radial-gradient(circle at 75% 30%, rgba(49, 90, 120, 0.68), transparent 24%),
+    linear-gradient(135deg, #111, #656762 55%, #202326);
+  background-position: center;
+  background-size: cover;
+}
+
+.video-link-card.has-thumbnail::before {
+  content: none;
+}
+
 .video-link-text {
   position: absolute;
   left: 24px;
